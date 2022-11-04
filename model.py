@@ -277,8 +277,8 @@ class OptimalcontrolModel(object) :
             x = V[:ix].transpose()
             Phi = V[ix:ix*ix + ix]
             Phi = Phi.transpose().reshape((length,ix,ix))
-            # Phi_inv = np.linalg.inv(Phi)
-            Phi_inv = np.linalg.pinv(Phi)
+            Phi_inv = np.linalg.inv(Phi)
+            # Phi_inv = np.linalg.pinv(Phi)
 
             f = self.forward(x,u)
             if self.type_linearization == "numeric_central" :
